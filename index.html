@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linear Interpolation Computation</title>
+<link rel="stylesheet" href="styles.css" />
+    
+</head>
+<body>
+<div class='content'>
+
+<h1>Linear Interpolation Computation</h1>
+
+<div class='ínput-box'>
+<span class='details'>X1</span>
+<input type='text' id='x1' placeholder='x1' required>
+</div>
+<div class='ínput-box'>
+<span class='details'>Y1</span>
+<input type='text' id='y1' placeholder='y1' required>
+</div>
+<div class='ínput-box'>
+<span class='details'>X2</span>
+<input type='text' id='x2' placeholder='x2' required>
+</div>
+<div class='ínput-box'>
+<span class='details'>Y2</span>
+<input type='text' id='y2' placeholder='y2' required>
+</div>
+<div class='ínput-box'>
+<span class='details'>X3</span>
+<input type='text' id='x3'placeholder='x3' required>
+</div>
+
+<button onclick="interpolate()">Compute</button>
+<h3 id='answer'>Answer </h3>
+
+<script>
+function interpolate()
+{
+var x1 = document.getElementById('x1').value;
+var y1 = document.getElementById('y1').value;
+var x2 = document.getElementById('x2').value;
+var y2 = document.getElementById('y2').value;
+var x3 = document.getElementById('x3').value;
+var y12 = parseFloat(y1)-parseFloat(y2)
+var x12 = parseFloat(x1)-parseFloat(x2)
+
+var m = y12/x12
+var c = y1 - m*x1
+var y3 = m*x3 +c
+if(!isNaN(y3))
+{
+document.getElementById('answer').innerHTML="Y3 is "+y3;
+}
+}
+</script>
+</div>
+</body>
+
+</html>
